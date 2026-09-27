@@ -8,8 +8,8 @@
     <!-- Fonte moderna do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Ícones do FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Ícones do FontAwesome (ATUALIZADO PARA A VERSÃO MAIS RECENTE QUE TEM O THREADS) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <style>
         /* CONFIGURAÇÕES DE CORES */
@@ -216,18 +216,47 @@
         }
 
         .social-icon {
-            color: var(--text-color);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             text-decoration: none;
             transition: all 0.3s ease;
-            opacity: 0.6;
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .social-icon:hover {
             opacity: 1;
-            color: var(--primary-color);
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
+
+        /* Cores específicas para cada rede */
+        
+        /* Instagram */
+        .social-icon.instagram i {
+            color: #E1306C;
+        }
+        .social-icon.instagram:hover i {
+            text-shadow: 0 0 15px rgba(225, 48, 108, 0.7);
+        }
+
+        /* Threads */
+        .social-icon.threads i {
+            color: #ffffff;
+        }
+        .social-icon.threads:hover i {
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+        }
+
+        /* TikTok */
+        .social-icon.tiktok i {
+            color: #ffffff;
+            transition: text-shadow 0.3s ease;
+        }
+        .social-icon.tiktok:hover i {
+            text-shadow: 2px 0px 0px #ff0050, -2px 0px 0px #00f2fe;
+        }
+
     </style>
 </head>
 
@@ -265,7 +294,7 @@
                 <span class="dot"></span> Online
             </div>
 
-            <p class="bio">Acesse meus conteúdos exclusivos 👇</p>
+            <p class="bio">Acesse meus conteúdos exclusivos</p>
 
         </header>
 
@@ -275,7 +304,7 @@
             <!-- Link: Telegram -->
             <a href="https://t.me/Lariinhaprevias" class="link-btn telegram" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>Canal VIP no Telegram</span>
+                <span>Canal FREE no Telegram 🔥</span>
             </a>
 
         </main>
@@ -283,15 +312,18 @@
         <!-- SEÇÃO DE REDES SOCIAIS -->
         <footer class="socials">
 
-            <a href="LINK_DO_INSTAGRAM" class="social-icon" target="_blank">
+            <!-- Instagram -->
+            <a href="LINK_DO_INSTAGRAM" class="social-icon instagram" target="_blank">
                 <i class="fa-brands fa-instagram"></i>
             </a>
 
-            <a href="LINK_DO_TWITTER" class="social-icon" target="_blank">
-                <i class="fa-brands fa-twitter"></i>
+            <!-- Threads -->
+            <a href="LINK_DO_THREADS" class="social-icon threads" target="_blank">
+                <i class="fa-brands fa-threads"></i>
             </a>
 
-            <a href="LINK_DO_TIKTOK" class="social-icon" target="_blank">
+            <!-- TikTok -->
+            <a href="LINK_DO_TIKTOK" class="social-icon tiktok" target="_blank">
                 <i class="fa-brands fa-tiktok"></i>
             </a>
 
