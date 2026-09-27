@@ -8,7 +8,7 @@
     <!-- Fonte moderna do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Ícones do FontAwesome (ATUALIZADO PARA A VERSÃO MAIS RECENTE QUE TEM O THREADS) -->
+    <!-- Ícones do FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
     <style>
@@ -231,8 +231,6 @@
         }
 
         /* Cores específicas para cada rede */
-        
-        /* Instagram */
         .social-icon.instagram i {
             color: #E1306C;
         }
@@ -240,7 +238,6 @@
             text-shadow: 0 0 15px rgba(225, 48, 108, 0.7);
         }
 
-        /* Threads */
         .social-icon.threads i {
             color: #ffffff;
         }
@@ -248,13 +245,94 @@
             text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
         }
 
-        /* TikTok */
         .social-icon.tiktok i {
             color: #ffffff;
             transition: text-shadow 0.3s ease;
         }
         .social-icon.tiktok:hover i {
             text-shadow: 2px 0px 0px #ff0050, -2px 0px 0px #00f2fe;
+        }
+
+        /* ==========================================
+           NOVIDADES / GRADE DE FOTOS E VÍDEOS
+           ========================================== */
+        .news-section {
+            width: 100%;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .news-title {
+            font-size: 0.95rem;
+            color: #e0e0e0;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            line-height: 1.4;
+            width: 85%;
+            max-width: 320px;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 85%;
+            max-width: 320px;
+            margin-bottom: 20px;
+        }
+
+        .media-item {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 3/4; /* Formato retrato/stories */
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid var(--btn-border);
+        }
+
+        /* Imagens/Vídeos borrados */
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(8px) brightness(0.65);
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        /* Ícone central sobre a foto borrada */
+        .media-content {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            z-index: 2;
+        }
+
+        .media-content i {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .badge-18 {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
         }
 
     </style>
@@ -294,7 +372,7 @@
                 <span class="dot"></span> Online
             </div>
 
-            <p class="bio">Acesse meus conteúdos exclusivos</p>
+            <p class="bio">Acesse meus conteúdos exclusivos 👇</p>
 
         </header>
 
@@ -304,10 +382,61 @@
             <!-- Link: Telegram -->
             <a href="https://t.me/Lariinhaprevias" class="link-btn telegram" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>Canal FREE no Telegram 🔥</span>
+                <span>Canal FREE no Telegram</span>
             </a>
 
         </main>
+
+        <!-- SEÇÃO DE NOVIDADES (BORRADA) -->
+        <section class="news-section">
+            <p class="news-title">🔥 Novidades todas as semanas. Entra agora para não perderes a próxima.</p>
+
+            <div class="media-grid">
+                
+                <!-- Foto 1 -->
+                <a href="https://t.me/Lariinhaprevias" class="media-item" target="_blank">
+                    <!-- Coloque o nome da sua foto1 aqui no src -->
+                    <img src="foto1.jpg" alt="Conteúdo Exclusivo">
+                    <div class="media-content">
+                        <i class="fa-solid fa-lock"></i>
+                        <span class="badge-18">+18</span>
+                    </div>
+                </a>
+                
+                <!-- Foto 2 -->
+                <a href="https://t.me/Lariinhaprevias" class="media-item" target="_blank">
+                    <!-- Coloque o nome da sua foto2 aqui no src -->
+                    <img src="foto2.jpg" alt="Conteúdo Exclusivo">
+                    <div class="media-content">
+                        <i class="fa-solid fa-lock"></i>
+                        <span class="badge-18">+18</span>
+                    </div>
+                </a>
+
+                <!-- Foto 3 -->
+                <a href="https://t.me/Lariinhaprevias" class="media-item" target="_blank">
+                    <!-- Coloque o nome da sua foto3 aqui no src -->
+                    <img src="foto3.jpg" alt="Conteúdo Exclusivo">
+                    <div class="media-content">
+                        <i class="fa-solid fa-lock"></i>
+                        <span class="badge-18">+18</span>
+                    </div>
+                </a>
+
+                <!-- Foto 4 (Exemplo de Vídeo) -->
+                <a href="https://t.me/Lariinhaprevias" class="media-item" target="_blank">
+                    <!-- Coloque o nome do seu vídeo curto aqui no src -->
+                    <video autoplay loop muted playsinline>
+                        <source src="previa-video.mp4" type="video/mp4">
+                    </video>
+                    <div class="media-content">
+                        <i class="fa-solid fa-play"></i>
+                        <span class="badge-18">Vídeo</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
 
         <!-- SEÇÃO DE REDES SOCIAIS -->
         <footer class="socials">
