@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lara Carmen</title>
+    <link rel="icon" type="image/png" href="perfil.jpeg">
+    <!-- Fonte moderna do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CONFIGURAÇÕES DE CORES */
+        :root {
+            --text-color: #ffffff;
+            --primary-color: #ff007f;
+            --btn-bg: rgba(255, 255, 255, 0.05);
+            --btn-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: transparent;
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+        }
+
+        /* --- VÍDEO DE FUNDO --- */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(10, 10, 12, 0.75);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- PERFIL --- */
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            padding: 4px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* --- SELO DE VERIFICAÇÃO DO INSTAGRAM --- */
+        .verified-badge {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        /* --- STATUS ONLINE --- */
+        .online-status {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            margin-bottom: 8px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background-color: #25d366;
+            border-radius: 50%;
+            animation: pulse-green 1.5s infinite;
+        }
+
+        @keyframes pulse-green {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 8px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            color: #a1a1aa;
+            font-weight: 400;
+        }
+
+        /* --- BOTÕES DOS LINKS --- */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 85%;
+            max-width: 320px;
+            padding: 16px 20px;
+            background: var(--btn-bg);
+            border: 1px solid var(--btn-border);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .link-btn i {
+            font-size: 1.4rem;
+            margin-right: 12px;
+        }
+
+        /* --- BOTÃO DO TELEGRAM CUSTOMIZADO --- */
+        .link-btn.telegram {
+            background: transparent;
+            border: 2px solid #0088cc;
+            color: #ffffff;
+            animation: glow-telegram 1.5s infinite alternate;
+        }
+
+        .link-btn.telegram i {
+            color: #0088cc;
+            text-shadow: 0 0 8px rgba(0, 136, 204, 0.8);
+        }
+
+        .link-btn.telegram:hover {
+            background: rgba(0, 136, 204, 0.15);
+            transform: scale(1.03);
+        }
+
+        @keyframes glow-telegram {
+            0% {
+                box-shadow: 0 0 5px rgba(0, 136, 204, 0.3),
+                            inset 0 0 5px rgba(0, 136, 204, 0.3);
+            }
+
+            100% {
+                box-shadow: 0 0 20px rgba(0, 136, 204, 0.9),
+                            inset 0 0 10px rgba(0, 136, 204, 0.6);
+                border-color: #33aadd;
+            }
+        }
+
+        /* --- REDES SOCIAIS --- */
+        .socials {
+            margin-top: 40px;
+            display: flex;
+            gap: 25px;
+        }
+
+        .social-icon {
+            color: var(--text-color);
+            font-size: 1.6rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .social-icon:hover {
+            opacity: 1;
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- VÍDEO DE FUNDO E MÁSCARA ESCURA -->
+    <div class="video-overlay"></div>
+
+    <video class="bg-video" autoplay loop muted playsinline>
+        <source src="video3.mp4" type="video/mp4">
+    </video>
+
+    <div class="container">
+
+        <!-- SEÇÃO DE PERFIL -->
+        <header class="profile">
+
+            <img src="perfil.jpeg" alt="Lara Carmen" class="avatar">
+
+            <!-- Nome com selo de verificação -->
+            <h1 class="name">
+                Lara Carmen
+                <img
+                    class="verified-badge"
+                    src="verificado.png"
+                    alt="Verificado"
+                    width="20"
+                    height="20"
+                    draggable="false"
+                >
+            </h1>
+
+            <!-- Status Online -->
+            <div class="online-status">
+                <span class="dot"></span> Online
+            </div>
+
+            <p class="bio">Acesse meus conteúdos exclusivos 👇</p>
+
+        </header>
+
+        <!-- SEÇÃO DE LINKS -->
+        <main class="links-container">
+
+            <!-- Link: Telegram -->
+            <a href="https://t.me/Lariinhaprevias" class="link-btn telegram" target="_blank">
+                <i class="fa-brands fa-telegram"></i>
+                <span>Canal VIP no Telegram</span>
+            </a>
+
+        </main>
+
+        <!-- SEÇÃO DE REDES SOCIAIS -->
+        <footer class="socials">
+
+            <a href="LINK_DO_INSTAGRAM" class="social-icon" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="LINK_DO_TWITTER" class="social-icon" target="_blank">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="LINK_DO_TIKTOK" class="social-icon" target="_blank">
+                <i class="fa-brands fa-tiktok"></i>
+            </a>
+
+        </footer>
+
+    </div>
+
+</body>
+</html>
