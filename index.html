@@ -453,5 +453,33 @@
         </div>
     </div>
 
+
+<!-- ===== ORIGEM TRACKING (instalado 13/11) ===== -->
+<script>
+(function(){
+  try{
+    var u = new URL(location.href);
+    var ref = (u.searchParams.get('ref')||'').toLowerCase().replace(/[^a-z0-9_]/g,'');
+    var origem = ref || 'direto';
+    localStorage.setItem('origem', origem);
+    document.querySelectorAll('a[href]').forEach(function(a){
+      try{
+        var h = a.getAttribute('href')||'';
+        if(!/t\.me\/[^/?#]*laracarmen/i.test(h)) return;
+        var b = new URL(h, location.href);
+        var isFunnel = /laracarmennbot/i.test(b.pathname||'');
+        b.searchParams.set('start', (isFunnel?'':'dm_')+origem);
+        a.setAttribute('href', b.toString());
+      }catch(e){}
+    });
+    var d = document.createElement('div');
+    d.style.cssText='position:fixed;bottom:6px;left:6px;font:10px monospace;color:rgba(255,255,255,.35);z-index:99;pointer-events:none;';
+    d.textContent = 'origem: ' + origem;
+    document.body.appendChild(d);
+  }catch(e){}
+})();
+</script>
+<!-- ===== FIM ORIGEM TRACKING ===== -->
+
 </body>
 </html>
