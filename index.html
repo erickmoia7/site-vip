@@ -354,22 +354,22 @@
                 Lara Carmen
                 <img class="verified-badge" src="verificado.png" alt="Verificado" draggable="false">
             </h1>
-            <div class="online-status"><span class="dot"></span> Online agora</div>
-            <p class="bio">Acesse meus conteúdos exclusivos 👇</p>
+            <div class="online-status"><span class="dot"></span><span data-i18n="online">Online agora</span></div>
+            <p class="bio" data-i18n="bio">Acesse meus conteúdos exclusivos 👇</p>
         </header>
 
      
         <main class="links-container">
             <a href="https://t.me/laracarmennbot?start=a2be0609d85d" class="link-btn telegram" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>Canal FREE no Telegram</span>
+                <span data-i18n="btnFree">Canal FREE no Telegram</span>
             </a>
         </main>
 
       
         <section class="news-section">
-            <h2 class="news-title">Vê só um pouco do que te espera… 👀</h2>
-            <p class="news-subtitle">Isto é apenas uma pequena prévia. O resto fica lá dentro.</p>
+            <h2 class="news-title" data-i18n="newsTitle">Vê só um pouco do que te espera… 👀</h2>
+            <p class="news-subtitle" data-i18n="newsSub">Isto é apenas uma pequena prévia. O resto fica lá dentro.</p>
 
             <div class="media-grid">
                 <a href="https://t.me/laracarmennbot?start=a2be0609d85d" class="media-item" target="_blank">
@@ -389,29 +389,29 @@
             </div>
             
             <div class="benefits-card">
-                <h3 class="benefits-title">Porque vais querer ficar por lá? 💜</h3>
-                <p class="benefits-subtitle-card">É grátis, é rápido e podes sair quando quiseres.</p>
+                <h3 class="benefits-title" data-i18n="benefitTitle">Porque vais querer ficar por lá? 💜</h3>
+                <p class="benefits-subtitle-card" data-i18n="benefitSub">É grátis, é rápido e podes sair quando quiseres.</p>
                 
                 <div class="benefits-list">
                     <div class="benefit-item">
                         <span class="emoji">🔥</span>
                         <div class="benefit-text">
-                            <strong>Novidades ao longo da semana</strong>
-                            <p>Há sempre algo novo para descobrir.</p>
+                            <strong data-i18n="b1t">Novidades ao longo da semana</strong>
+                            <p data-i18n="b1d">Há sempre algo novo para descobrir.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <span class="emoji">👀</span>
                         <div class="benefit-text">
-                            <strong>Conteúdo que não vês aqui</strong>
-                            <p>Algumas coisas ficam reservadas para o grupo.</p>
+                            <strong data-i18n="b2t">Conteúdo que não vês aqui</strong>
+                            <p data-i18n="b2d">Algumas coisas ficam reservadas para o grupo.</p>
                         </div>
                     </div>
                     <div class="benefit-item">
                         <span class="emoji">💜</span>
                         <div class="benefit-text">
-                            <strong>Fica por dentro</strong>
-                            <p>Acompanha as novidades diretamente no grupo.</p>
+                            <strong data-i18n="b3t">Fica por dentro</strong>
+                            <p data-i18n="b3d">Acompanha as novidades diretamente no grupo.</p>
                         </div>
                     </div>
                 </div>
@@ -421,7 +421,7 @@
         <div class="bottom-cta-container">
             <a href="https://t.me/laracarmennbot?start=a2be0609d85d" class="link-btn telegram" target="_blank">
                 <i class="fa-brands fa-telegram"></i>
-                <span>ENTRAR AGORA GRÁTIS</span>
+                <span data-i18n="btnJoin">ENTRAR AGORA GRÁTIS</span>
             </a>
         </div>
 
@@ -432,7 +432,7 @@
             <a href="https://www.tiktok.com/@laracarmenof?_r=1&_t=ZS-9A79rYRK1Yn" class="social-icon tiktok" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
         </footer>
 
-        <div class="footer-warning">
+        <div class="footer-warning" data-i18n="footerWarn">
             Grupo gratuito · Conteúdo +18 · Podes sair quando quiseres
         </div>
 
@@ -446,7 +446,7 @@
                 </div>
                 <div class="cta-direct-content">
                     <span class="tag-direct">DIRECT</span>
-                    <span class="cta-direct-title">FALE COMIGO</span>
+                    <span class="cta-direct-title" data-i18n="ctaDirect">FALE COMIGO</span>
                 </div>
                 <i class="fa-solid fa-chevron-right cta-direct-arrow" aria-hidden="true"></i>
             </a>
@@ -473,6 +473,7 @@
       }catch(e){}
     });
     var d = document.createElement('div');
+    d.id='dbg';
     d.style.cssText='position:fixed;bottom:6px;left:6px;font:10px monospace;color:rgba(255,255,255,.35);z-index:99;pointer-events:none;';
     d.textContent = 'origem: ' + origem;
     document.body.appendChild(d);
@@ -481,5 +482,43 @@
 </script>
 <!-- ===== FIM ORIGEM TRACKING ===== -->
 
+<!-- ===== MULTI-LINGUE (instalado 14/11) ===== -->
+<script>
+(function(){
+  try{
+    var D={pt:{"online": "Online agora", "bio": "Acesse meus conteúdos exclusivos 👇", "btnFree": "Canal FREE no Telegram", "newsTitle": "Vê só um pouco do que te espera… 👀", "newsSub": "Isto é apenas uma pequena prévia. O resto fica lá dentro.", "benefitTitle": "Porque vais querer ficar por lá? 💜", "benefitSub": "É grátis, é rápido e podes sair quando quiseres.", "b1t": "Novidades ao longo da semana", "b1d": "Há sempre algo novo para descobrir.", "b2t": "Conteúdo que não vês aqui", "b2d": "Algumas coisas ficam reservadas para o grupo.", "b3t": "Fica por dentro", "b3d": "Acompanha as novidades diretamente no grupo.", "btnJoin": "ENTRAR AGORA GRÁTIS", "footerWarn": "Grupo gratuito · Conteúdo +18 · Podes sair quando quiseres", "ctaDirect": "FALE COMIGO", "origen": "origem:"},es:{"online": "En línea ahora", "bio": "Accede a mis contenidos exclusivos 👇", "btnFree": "Canal FREE en Telegram", "newsTitle": "Mira un poco de lo que te espera… 👀", "newsSub": "Esto es solo una pequeña anticipación. El resto está ahí dentro.", "benefitTitle": "¿Por qué vas a querer quedarte ahí? 💜", "benefitSub": "Es gratis, es rápido y puedes salir cuando quieras.", "b1t": "Novedades a lo largo de la semana", "b1d": "Siempre hay algo nuevo por descubrir.", "b2t": "Contenido que no ves aquí", "b2d": "Algunas cosas quedan reservadas para el grupo.", "b3t": "Mantente al día", "b3d": "Sigue las novedades directamente en el grupo.", "btnJoin": "ENTRAR AHORA GRATIS", "footerWarn": "Grupo gratuito · Contenido +18 · Puedes salir cuando quieras", "ctaDirect": "HÁBLAME", "origen": "origen:"},en:{"online": "Online now", "bio": "Get my exclusive content 👇", "btnFree": "FREE Channel on Telegram", "newsTitle": "Take a peek at what's waiting for you… 👀", "newsSub": "This is just a small preview. The rest is in there.", "benefitTitle": "Why you will want to stay 💜", "benefitSub": "It's free, it's quick and you can leave whenever.", "b1t": "New drops through the week", "b1d": "There is always something new to discover.", "b2t": "Content you don't see here", "b2d": "Some things stay exclusive to the group.", "b3t": "Stay in the loop", "b3d": "Follow the updates directly in the group.", "btnJoin": "JOIN FREE NOW", "footerWarn": "Free group · 18+ content · Leave whenever you want", "ctaDirect": "TALK TO ME", "origen": "origin:"}};
+    var u=new URL(location.href);
+    var lp=(u.searchParams.get('lang')||'').toLowerCase().replace(/[^a-z]/g,'').slice(0,2);
+    var stored=null;try{stored=localStorage.getItem('idioma');}catch(e){}
+    var nav=(navigator.language||'').toLowerCase().slice(0,2);
+    var L=(D[lp]?lp:null)||(D[stored]?stored:null)||((nav==='pt'||nav==='es'||nav==='en')?nav:'pt');
+    function apply(l){
+      var t=D[l];if(!t)return;
+      document.documentElement.setAttribute('lang',l==='pt'?'pt-PT':l);
+      document.querySelectorAll('[data-i18n]').forEach(function(el){
+        var k=el.getAttribute('data-i18n');if(t[k]!=null)el.textContent=t[k];
+      });
+      try{var o=localStorage.getItem('origem')||'direto';var b=document.getElementById('dbg');if(b)b.textContent=t.origen+' '+o;}catch(e){}
+      var tg=document.getElementById('lngToggle');
+      if(tg)tg.querySelectorAll('button').forEach(function(b){
+        b.style.background=b.getAttribute('data-l')===l?'rgba(255,0,127,.55)':'rgba(255,255,255,.08)';
+        b.style.borderColor=b.getAttribute('data-l')===l?'rgba(255,0,127,.9)':'rgba(255,255,255,.25)';
+      });
+    }
+    apply(L);
+    var w=document.createElement('div');
+    w.id='lngToggle';
+    w.style.cssText='position:fixed;top:6px;right:6px;z-index:99;display:flex;gap:4px;opacity:.6;';
+    ['pt','es','en'].forEach(function(l){
+      var b=document.createElement('button');
+      b.setAttribute('data-l',l);b.textContent=l.toUpperCase();
+      b.style.cssText='background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);color:#fff;font:10px monospace;padding:3px 6px;border-radius:6px;cursor:pointer;';
+      b.onclick=function(){try{localStorage.setItem('idioma',l);}catch(e){}apply(l);};
+      w.appendChild(b);
+    });
+    document.body.appendChild(w);
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
